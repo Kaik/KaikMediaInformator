@@ -1,0 +1,36 @@
+{
+	"name" : "kaikmedia/informator-module",
+	"version" : "1.0.0",        
+	"description" : "Module to provide city guide information",
+	"type" : "zikula-module",
+	"license" : "LGPL-3.0+",
+	"authors" : [{
+			"name" : "Kaik",
+			"homepage" : "http://kaikmedia.com/",
+			"email" : "contact@kaikmedia.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Kaikmedia\\InformatorModule\\" : ""
+		}
+	},
+	"require" : {
+		"php" : ">5.3.3"
+	},
+	"extra" : {
+		"zikula" : {
+			"core-compatibility" : ">=2.0.0",                   
+			"class" : "Kaikmedia\\InformatorModule\\KaikmediaInformatorModule",
+			"displayname" : "Informator",
+			"url" : "informator",
+			"capabilities" : {
+                                "user" : { "route" : "kaikmediainformatormodule_informations_list"},
+				"admin" : {"route" : "kaikmediainformatormodule_admin_index"}
+			},
+			"securityschema" : {
+				"KaikmediaInformatorModule::" : "::"
+			}                       
+		}
+	}
+}
